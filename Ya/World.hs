@@ -28,5 +28,7 @@ bindIO (IO m) k = IO (\s -> case m s of (# new_s, x #) -> unIO (k x) new_s)
 unIO :: World a -> (State# RealWorld -> (# State# RealWorld, a #))
 unIO (IO x) = x
 
-pattern Raw :: World e -> L () World e
+pattern Raw, Out, World :: World e -> L () World e
 pattern Raw e = Labeled e
+pattern Out e = Labeled e
+pattern World e = Labeled e

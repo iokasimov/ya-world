@@ -7,17 +7,17 @@ import "ghc-prim" GHC.Types (IO (IO))
 
 type World = IO
 
-instance Mapping U_I_II U_I_II AR AR World World
+instance Mapping T'I'II T'I'II AR AR World World
  where mapping = rewrap / \m x -> bindIO x (returnIO `fio` m)
 
-instance Mapping U_I_II U_I_II AR AR (World `T'TT'I` Void `L` World) World
+instance Mapping T'I'II T'I'II AR AR (World `T'TT'I` Void `L` World) World
  where mapping = rewrap / \m (T'TT'I ioio) -> bindIO (bindIO ioio unwrap) (returnIO `fio` m)
 
-instance Mapping U_I_II U_I_II AR AR (Day U_I_II AR P P World (Void `L` World) i ii) World
- where mapping = rewrap / \from (U_V_UU_UUU_UUUU_T'TT'I_II_III (These (These x (Labeled y)) (U_I_II f))) -> bindIO x (\xx -> from `compose` f `compose` These xx `fo` y)
+instance Mapping T'I'II T'I'II AR AR (Day T'I'II AR P P World (Void `L` World) i ii) World
+ where mapping = rewrap / \from (U_V_UU_UUU_UUUU_T'TT'I_II_III (These (These x (Labeled y)) (T'I'II f))) -> bindIO x (\xx -> from `compose` f `compose` These xx `fo` y)
 
-instance Mapping U_I_II U_I_II AR AR (U_I_II AR Unit) World
- where mapping = rewrap / \from (U_I_II f) -> returnIO `ha` from `li` f Unit
+instance Mapping T'I'II T'I'II AR AR (T'I'II AR Unit) World
+ where mapping = rewrap / \from (T'I'II f) -> returnIO `ha` from `li` f Unit
 
 returnIO :: a -> World a
 returnIO x = IO (\ s -> (# s, x #))

@@ -32,10 +32,10 @@ instance Mapping T'I'II T'I'II (AR) (AR) (World `T'TT'I` I `L` I `T` Recursive) 
   x `yok` Label @_ @_ @Void `ha` constant @(AR) (map @T'I'II @T'I'II @_ @_ @_ @World source (T'TT'I x)) `ha` unwrap @(AR) `ha` unwrap @(AR)
 
 returnIO :: a -> World a
-returnIO x = IO (\ s -> (# s, x #))
+returnIO x = IO (\xx -> (# xx, x #))
 
 bindIO :: World a -> (a -> World b) -> World b
-bindIO (IO m) k = IO (\s -> case m s of (# new_s, x #) -> unIO (k x) new_s)
+bindIO (IO x) f = IO (\xx -> case x xx of (# xxx, x #) -> unIO (f x) xxx)
 
 unIO :: World a -> (State# RealWorld -> (# State# RealWorld, a #))
 unIO (IO x) = x

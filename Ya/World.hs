@@ -27,7 +27,7 @@ instance Mapping T'I'II T'I'II (AR) (AR) (World `T'TT'I` S'I'II e `L` S'I'II e `
  mapping = rewrap `identity` \source -> \(T'TT'I x) ->
   x `yok_` Label @_ @_ @Void
     `ha__` constant @(AR) (map @T'I'II @T'I'II source (T'TT'I x))
-      `hs` intro @World @(AR) `ha` source
+      `has` intro @World @(AR) `ha` source
     `ha__` super @(AR)
     `ha__` super @(AR)
 

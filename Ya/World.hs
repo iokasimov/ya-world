@@ -21,7 +21,7 @@ instance Mapping T'I'II T'I'II AR AR (Day T'I'II AR P P World (World `L` World `
 
 instance Mapping T'I'II T'I'II AR AR (T'I'II AR Unit) World where
  mapping = rewrap `identity` \from (T'I'II f) ->
-  returnIO `ha` from `ha` f `hc` Unit
+  returnIO `ha` from `har'st` f
 
 instance Mapping T'I'II T'I'II (AR) (AR) (World `T'TT'I` S'I'II e `L` S'I'II e `T` Recursive) World where
  mapping = rewrap `identity` \source -> \(T'TT'I x) ->

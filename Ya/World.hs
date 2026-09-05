@@ -44,5 +44,8 @@ bindIO (IO x) f = IO (\xx -> case x xx of (# xxx, xxxx #) -> unIO (f xxxx) xxx)
 unIO :: World a -> (State# RealWorld -> (# State# RealWorld, a #))
 unIO (IO x) = x
 
-pattern Await :: World e `AR__` World `L` World `T` Void `T` e
-pattern Await e = Label e
+pattern Await :: forall t i . t i `AR__` t `L` World `T` Void `T` i
+pattern Await x = Label x
+
+pattern Spark :: forall i . i `AR__` I `L` World `T` Void `T` i
+pattern Spark x = Label (Alone x)

@@ -51,6 +51,3 @@ unIO (IO x) = x
 
 pattern Await :: forall t i . t i `AR__` t `L` World `T` Void `T` i
 pattern Await x = Label x
-
-pattern Spark :: forall i . i `AR__` I `L` World `T` Void `T` i
-pattern Spark x = Label (Alone x)

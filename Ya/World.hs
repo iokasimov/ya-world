@@ -19,8 +19,13 @@ instance Mapping T'I'II T'I'II AR AR (Day T'I'II AR P P World (World `L` World `
  mapping = rewrap `identity` \from (U_V_UU_UUU_UUUU_T'TT'I_II_III (These (These x (Label y)) (T'I'II f))) -> 
   bindIO x (\xx -> from `compose` f `compose` These xx `fo` y)
 
+-- TODO: remove
 instance Mapping T'I'II T'I'II AR AR (T'I'II AR Unit) World where
  mapping = rewrap `identity` \from (T'I'II f) ->
+  returnIO `ha` from `har'st` f
+
+instance Mapping T'I'II T'I'II AR AR (T'I'II AR Unit `L` World `T` (Void)) World where
+ mapping = rewrap `identity` \from (Label (T'I'II f)) ->
   returnIO `ha` from `har'st` f
 
 instance Mapping T'I'II T'I'II (AR) (AR) (World `T'TT'I` S'I'II e `L` S'I'II e `T` Recursive) World where
